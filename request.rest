@@ -1,0 +1,26 @@
+GET http://localhost:5000/stats
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Imtha2EiLCJwYXNzd29yZCI6IiQyYiQxMCRzZHhJMTRPa2lmeThwOXFkNVlYVHBlWkJldXEwdUJuRHpRNGpKa0Nld3k5b0ZGaFJEYU1jSyIsImlhdCI6MTU4Njg0NjIyNn0.Lx5zZh5JghhukXSjZSrBN_cfUpCyR4_LZ25IGJ6nwZk
+
+
+###
+
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "login": "kaka",
+    "password": "pass2"
+}
+
+
+###
+
+
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+    "login": "kaka",
+    "password": "pass2"
+}
