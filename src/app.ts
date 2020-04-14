@@ -4,6 +4,8 @@ import { fetchStats } from './fetchStats'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
+const PORT = process.env.port || 5000
+
 const app = express()
 
 app.use(express.json())
@@ -63,4 +65,4 @@ function checkAuth(req: Request, res: Response, next: NextFunction) {
 }
 
 // use env for port
-app.listen(5000, () => console.log('Server running on port 5000'))
+app.listen(PORT, () => console.log('Server running on port: ', PORT))
