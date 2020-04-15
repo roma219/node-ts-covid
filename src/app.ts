@@ -18,6 +18,11 @@ type User = {
 // use db
 const users : User[] = []
 
+
+app.get('/', (req, res) => {
+    res.send('<div>Hello</div>')
+})
+
 app.get('/stats', checkAuth, async (req, res) => {
     const stats = await fetchStats()
     res.send(stats)
