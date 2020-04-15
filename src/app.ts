@@ -1,18 +1,14 @@
 import express, { Request, Response, NextFunction } from 'express'
-import { fetchStats } from './fetchStats'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
+import { fetchStats } from './fetchStats'
+import { User } from './types'
 
 const PORT = process.env.PORT || 5000
 
 const app = express()
 
 app.use(express.json())
-
-type User = {
-    login: string
-    password: string
-}
 
 // use db
 const users : User[] = []

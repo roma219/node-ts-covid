@@ -1,20 +1,7 @@
 import fetch from 'node-fetch'
 import cheerio from 'cheerio'
 import tableparser from 'cheerio-tableparser'
-
-type CountryData = {
-    name: string
-    totalCases: number
-    totalDeaths: number
-}
-
-enum TableFields {'Country,Other', 'TotalCases', 'TotalDeaths'}
-
-enum DataFields {
-    'Country,Other' = 'name',
-    'TotalCases' = 'totalCases',
-    'TotalDeaths' = 'totalDeaths',
-}
+import { TableFields, CountryData, DataFields } from './types'
 
 const fetchStats = () => {
   return fetch('https://www.worldometers.info/coronavirus/')
