@@ -4,7 +4,7 @@ import { fetchStats } from './fetchStats'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
-const PORT = process.env.port || 5000
+const PORT = process.env.PORT || 5000
 
 const app = express()
 
