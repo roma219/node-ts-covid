@@ -6,7 +6,3 @@ install:
 script:
 # - npm run lint
 - npm run build
-deploy:
-  provider: heroku
-  api_key:
-    secure: nCqcBvzG+zWw2ZCchyFtwskX+jnzufGZ6yP45AYHYaGFfuIvBaUxOTnN8ZUJs+vW8kM2UN7MotnhJq17T9tktPdaN+SUen0YjI3EoVltVlE2Q0OEqqlD96kLEyDaprIvkx3fP/sEwuB+c+cnHPMqrLfCbJBj1wDgUD7LDSvUwRUdfGxMetr9rCj++EN6k6Q/IGR50z9ugAt+r3+wW/HIvZfRoVx1sotooW261hzPaoQ1Vghbros/ucuFKdL21tXW6k2Y4iK0OD8/D/G5Blh2A+Dh/V4j9hxAZn8hUATY9XKuoEzTRg90+/nTWPG1oyLNUIeMYOO4YLw1dQ/CzckLLuCBfXUowNrKI6E7LCh2C/NJdx05wF5NG7XU6SRKRFXEMqUF6mevmsFZ6YRjrodFWINik7ytmndpR3kY9gpjlVmPr1iEtPwEzRhSi36IHcXz0T6cf8SIQfgcSXEtECEIIdRJOj7ktyJlrvsH6B7zDJiqvURoBn6h0BTk6uq+q2aRdfd7VeGXx5P7ZEG3q0i4ievpnjS9o68I+gbbgCgm7NtOqs8CtoYTsyr9rZZi3LgAIYMMw3Q/s+cNUg6oxkTuP6VzRpAX1coFpIm4ekgfYQEkmDCZL2yqRRxbVMTR0wv+YH092jrI/I7lofmSmZIUBUYpHl0EUeTekuJUNu8JLnQ=
