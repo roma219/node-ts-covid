@@ -6,9 +6,6 @@ module.exports = {
   },
   extends: [
     'plugin:node/recommended',
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
     'standard'
   ],
   globals: {
@@ -24,18 +21,15 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    '@typescript-eslint'
+    '@typescript-eslint',
   ],
-  settings: {
-    'import/resolver': {
-        node: {
-            extensions: ['.js', '.jsx', '.ts', '.tsx'],
-            moduleDirectory: ['node_modules', 'src/'],
-        },
-    },
-  },
   rules: {
-    'node/no-unsupported-features/es-syntax': ["error", { "ignores": ["modules"] }]
+    'node/no-unsupported-features/es-syntax': ["error", { "ignores": ["modules"] }],
+    "node/no-missing-import": ["error", {
+      "allowModules": [],
+      "resolvePaths": ["node_mofules", 'src/'],
+      "tryExtensions": [".js", ".json", ".node", ".ts"]
+    }]
   },
   overrides: [
     {
