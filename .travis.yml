@@ -5,8 +5,8 @@ install:
 - npm ci
 jobs:
   include:
-    - stage: "Lint"                # naming the Tests stage
-      script: "npm run lint"
+    # - stage: "Lint"                # naming the Tests stage
+    #   script: "npm run lint"
     - stage: "Build"
       script: "npm run build"
     - stage: "Deploy"
