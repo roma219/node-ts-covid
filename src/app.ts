@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express'
-import { fetchStats } from './fetchStats.ts'
+import { fetchStats } from './fetchStats'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
