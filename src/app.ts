@@ -1,4 +1,3 @@
-
 import express, { Request, Response, NextFunction } from 'express'
 import { fetchStats } from './fetchStats.ts'
 import jwt from 'jsonwebtoken'
