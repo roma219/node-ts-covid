@@ -27,7 +27,7 @@ module.exports = {
     'node/no-unsupported-features/es-syntax': ["error", { "ignores": ["modules"] }],
     "node/no-missing-import": ["error", {
       "allowModules": [],
-      "resolvePaths": ["node_mofules", 'src/'],
+      "resolvePaths": ["node_mofules", 'src/', ''],
       "tryExtensions": [".js", ".json", ".node", ".ts"]
     }]
   },

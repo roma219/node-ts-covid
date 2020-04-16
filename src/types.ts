@@ -1,3 +1,12 @@
+
+declare global {
+    namespace Express {
+        interface Request {
+            user?: string
+        }
+    }
+}
+
 export type User = {
     login: string
     password: string
