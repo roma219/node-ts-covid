@@ -5,12 +5,12 @@ import { users } from '../users'
 import {
   CREATED, BAD_REQUEST,
   UNAUTHORIZED, INTERNAL_SERVER_ERROR,
-  FORBIDDEN
+  FORBIDDEN, NO_CONTENT
 } from 'http-status-codes'
 import { User } from '../types'
 
 // todo: redis
-const refreshTokens : string[] = []
+let refreshTokens : string[] = []
 
 const router = Router()
 
@@ -58,6 +58,11 @@ router.post('/token', (req, res) => {
     const accessToken = generateAccessToken((user as User).login)
     res.json({ accessToken })
   })
+})
+
+router.delete('/logout', (req, res) => {
+  refreshTokens = refreshTokens.filter(token => token !== req.body.token)
+  res.sendStatus(NO_CONTENT)
 })
 
 function generateAccessToken (login: string) {
