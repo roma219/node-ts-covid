@@ -1,25 +1,24 @@
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import { Router } from 'express'
-import { users } from '../users'
 import {
   CREATED, BAD_REQUEST,
   UNAUTHORIZED, INTERNAL_SERVER_ERROR,
   FORBIDDEN, NO_CONTENT
 } from 'http-status-codes'
-import { User } from '../types'
+import UserModel, { IUser } from '../models/User'
 
 // todo: redis
 let refreshTokens : string[] = []
 
 const router = Router()
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
   const { login, password } = req.body
 
   if (!login || !password) return res.sendStatus(BAD_REQUEST)
 
-  const user = users.find(item => item.login === login)
+  const user = await UserModel.findOne({ login })
 
   if (!user) return res.sendStatus(BAD_REQUEST)
 
@@ -35,16 +34,23 @@ router.post('/login', (req, res) => {
   })
 })
 
-router.post('/signup', (req, res) => {
+router.post('/signup', async (req, res) => {
   const { login, password } = req.body
-  if (!login || !password || users.find(item => item.login === login)) {
+  if (!login || !password) {
     return res.status(BAD_REQUEST).send('Invalid data provided')
   }
+  const user = await UserModel.findOne({ login })
+  if (user) return res.status(BAD_REQUEST).send('Username is taken')
 
   bcrypt.hash(password, 10, (err, hash) => {
     if (err) return res.sendStatus(INTERNAL_SERVER_ERROR)
-    users.push({ login, password: hash })
-    res.status(CREATED).send()
+
+    const newUser = new UserModel({ login, password: hash })
+
+    newUser.save(function (error, document) {
+      if (error) return res.sendStatus(BAD_REQUEST)
+      res.status(CREATED).send()
+    })
   })
 })
 
@@ -55,7 +61,7 @@ router.post('/token', (req, res) => {
 
   jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET as string, (err, user) => {
     if (err) return res.sendStatus(FORBIDDEN)
-    const accessToken = generateAccessToken((user as User).login)
+    const accessToken = generateAccessToken((user as IUser).login)
     res.json({ accessToken })
   })
 })

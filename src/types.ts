@@ -7,10 +7,10 @@ declare global {
     }
 }
 
-export type User = {
-    login: string
-    password: string
-}
+// export type User = {
+//     login: string
+//     password: string
+// }
 
 export type CountryData = {
     name: string
