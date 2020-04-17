@@ -7,8 +7,8 @@ https://enigmatic-mountain-35900.herokuapp.com
 
 ##### API Methods:
 
-#### Fetch stats
 ----
+#### Fetch stats
 Returns json data with stats by country.
 
 * **URL**
@@ -35,8 +35,8 @@ Authorization: <string> ('Bearer <token>')
 }]
 ```
 
-#### Login
 ----
+#### Login
 Logs in via login & password
 
 * **URL**
@@ -66,8 +66,8 @@ POST
 ```
 
 
-#### Sign up
 ----
+#### Sign up
 Signs up with login & password provided
 
 * **URL**
@@ -87,8 +87,8 @@ POST
 }
 ```
 
-#### Refresh token
 ----
+#### Refresh token
 Signs up with login & password provided
 
 * **URL**
@@ -106,8 +106,8 @@ POST
 }
 ```
 
-#### Log out
 ----
+#### Log out
 Logs user out
 
 * **URL**
