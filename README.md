@@ -2,45 +2,126 @@
 - Authentication/Authorization via JWT
 - MongoDB
 
-API URL:
+##### API URL:
 https://enigmatic-mountain-35900.herokuapp.com
 
-API Methods:
+##### API Methods:
 
-GET /stats
+#### Fetch stats
+----
+Returns json data with stats by country.
+
+* **URL**
+```
+/stats
+```
+* **Method:**
+
+```
+GET
+```
+
+* **Headers:**
+```
 Authorization: <string> ('Bearer <token>')
-  
-###
+```
 
-POST /login
+* **Response:**
+```
+[{
+    name: <string>,
+    totalCases: <string>
+    totaDeaths: <string>
+}]
+```
 
+#### Login
+----
+Logs in via login & password
+
+* **URL**
+```
+/login
+```
+* **Method:**
+
+```
+POST
+```
+
+* **Body:**
+```
 {
-    "login": "<string>",
-    "password": "<string>"
+    login: <string>,
+    password: <string>
 }
+```
 
-###
-
-POST /signup
-
+* **Response:**
+```
 {
-    "login": "<string>",
-    "password": "<string>"
+    accessToken: <string>,
+    refreshToken: <string>
 }
+```
 
-###
 
-POST /token
+#### Sign up
+----
+Signs up with login & password provided
 
+* **URL**
+```
+/signup
+```
+* **Method:**
+
+```
+POST
+```
+* **Body:**
+```
+{
+    login: <string>,
+    password: <string>
+}
+```
+
+#### Refresh token
+----
+Signs up with login & password provided
+
+* **URL**
+```
+/token
+```
+* **Method:**
+```
+POST
+```
+* **Body:**
+```
 {
     "token": "<string>"
 }
+```
 
-###
+#### Log out
+----
+Logs user out
 
-DELETE /logout
+* **URL**
+```
+/signup
+```
+* **Method:**
 
+```
+DELETE
+```
+* **Body:**
+```
 {
-    "token": "string"
+    "token": "<string>"
 }
-
+```
