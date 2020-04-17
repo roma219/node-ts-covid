@@ -2,14 +2,17 @@
 - Authentication/Authorization via JWT
 - MongoDB
 
+API URL:
+https://enigmatic-mountain-35900.herokuapp.com
+
 API Methods:
 
-GET https://enigmatic-mountain-35900.herokuapp.com/stats
+GET /stats
 Authorization: <string> ('Bearer <token>')
   
 ###
 
-POST https://enigmatic-mountain-35900.herokuapp.com/login
+POST /login
 
 {
     "login": "<string>",
@@ -18,7 +21,7 @@ POST https://enigmatic-mountain-35900.herokuapp.com/login
 
 ###
 
-POST https://enigmatic-mountain-35900.herokuapp.com/signup
+POST /signup
 
 {
     "login": "<string>",
@@ -27,7 +30,7 @@ POST https://enigmatic-mountain-35900.herokuapp.com/signup
 
 ###
 
-POST https://enigmatic-mountain-35900.herokuapp.com/token
+POST /token
 
 {
     "token": "<string>"
@@ -35,7 +38,7 @@ POST https://enigmatic-mountain-35900.herokuapp.com/token
 
 ###
 
-DELETE https://enigmatic-mountain-35900.herokuapp.com/logout
+DELETE /logout
 
 {
     "token": "string"
