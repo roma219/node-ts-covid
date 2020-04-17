@@ -10,7 +10,6 @@ Authorization: <string> ('Bearer <token>')
 ###
 
 POST https://enigmatic-mountain-35900.herokuapp.com/login
-Content-Type: application/json
 
 {
     "login": "<string>",
@@ -20,7 +19,6 @@ Content-Type: application/json
 ###
 
 POST https://enigmatic-mountain-35900.herokuapp.com/signup
-Content-Type: application/json
 
 {
     "login": "<string>",
@@ -30,7 +28,6 @@ Content-Type: application/json
 ###
 
 POST https://enigmatic-mountain-35900.herokuapp.com/token
-Content-Type: application/json
 
 {
     "token": "<string>"
@@ -39,7 +36,6 @@ Content-Type: application/json
 ###
 
 DELETE https://enigmatic-mountain-35900.herokuapp.com/logout
-Content-Type: application/json
 
 {
     "token": "string"
