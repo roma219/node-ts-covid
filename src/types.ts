@@ -7,11 +7,6 @@ declare global {
     }
 }
 
-// export type User = {
-//     login: string
-//     password: string
-// }
-
 export type CountryData = {
     name: string
     totalCases: number
