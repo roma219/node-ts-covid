@@ -1,7 +1,7 @@
 import express from 'express'
 import routes from './routes'
+import './db'
 require('dotenv').config()
-require('./db.ts')
 
 const PORT = process.env.PORT || 5000
 
