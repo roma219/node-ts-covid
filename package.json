@@ -7,7 +7,7 @@
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts",
     "build": "tsc -p .",
-    "lint": "eslint src/**/*",
+    "lint": "eslint src/**/* --no-error-on-unmatched-pattern",
     "test": "jest ."
   },
   "keywords": [],
